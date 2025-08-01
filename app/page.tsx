@@ -11,7 +11,7 @@ import { MissionVisionCard } from "@/components/mission-vision-card"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { ProfessionalHero } from "@/components/professional-hero"
 import { VideoSection } from "@/components/video-section"
-import {  ModernStats } from "@/components/enhanced-stats"
+import { ModernStats } from "@/components/enhanced-stats"
 import { Zap, Shield, Cog, Fuel, Settings, Menu, X, CheckCircle, Mail, Phone, MapPin, Target, Eye, Facebook, Linkedin, AtSign, ChevronRight } from "lucide-react"
 import { type Locale, getTranslation } from "@/lib/i18n"
 
@@ -22,30 +22,35 @@ export default function HomePage() {
 
   const services = [
     {
+      id: "electrical-installation", // Adicione o ID
       icon: Zap,
       title: t.electricalInstallation,
       description: t.electricalDesc,
       details: t.electricalDetails,
     },
     {
+      id: "fire-safety", // Adicione o ID
       icon: Shield,
       title: t.fireSafety,
       description: t.fireDesc,
       details: t.fireDetails,
     },
     {
+      id: "industrial-automation", // Adicione o ID
       icon: Cog,
       title: t.industrialAutomation,
       description: t.automationDesc,
       details: t.automationDetails,
     },
     {
+      id: "oil-gas", // Adicione o ID
       icon: Fuel,
       title: t.oilGas,
       description: t.oilGasDesc,
       details: t.oilGasDetails,
     },
     {
+      id: "electrical-manufacturing", // Adicione o ID
       icon: Settings,
       title: t.electricalManufacturing,
       description: t.manufacturingDesc,
@@ -62,10 +67,10 @@ export default function HomePage() {
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-r from-white via-slate-50/50 to-white"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#00955e]/5 via-transparent to-[#00955e]/5 opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-        
+
         {/* Decorative Line */}
         <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#00955e] to-transparent opacity-60"></div>
-        
+
         <div className="container mx-auto px-4 relative">
           <div className="flex items-center justify-between h-20">
             {/* Enhanced Logo */}
@@ -112,9 +117,9 @@ export default function HomePage() {
             {/* Enhanced Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-2">
               <LanguageSwitcher currentLocale={locale} onLocaleChange={setLocale} />
-              <Button 
-                variant="ghost" 
-                size="icon" 
+              <Button
+                variant="ghost"
+                size="icon"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="relative group/mobile hover:bg-[#00955e]/10 transition-all duration-300"
               >
@@ -161,7 +166,7 @@ export default function HomePage() {
         {/* Background decorative elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#00955e]/5 to-transparent rounded-full transform translate-x-32 -translate-y-32"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[#00955e]/3 to-transparent rounded-full transform -translate-x-48 translate-y-48"></div>
-        
+
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
             <div className="inline-block">
@@ -185,6 +190,7 @@ export default function HomePage() {
                   seeDetailsText={t.seeDetails}
                   contractServiceText={t.contractService}
                   whatsappMessage={t.whatsappMessage}
+                  serviceId={service.id} // Passe o ID aqui
                 />
               </div>
             ))}
@@ -200,7 +206,7 @@ export default function HomePage() {
           <div className="absolute top-40 right-20 w-24 h-24 bg-[#00955e] rounded-full"></div>
           <div className="absolute bottom-20 left-1/4 w-16 h-16 border-2 border-[#00955e] rotate-45"></div>
         </div>
-        
+
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
             <div className="inline-block">
@@ -262,7 +268,7 @@ export default function HomePage() {
             {/* Background Effects */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#00955e]/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#00955e]/10 to-transparent rounded-2xl transform rotate-45 translate-x-16 -translate-y-16 group-hover:from-[#00955e]/20 transition-all duration-500"></div>
-            
+
             <div className="relative">
               <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-6 group-hover:from-[#00955e] group-hover:to-[#007a4e] transition-all duration-500">
                 {t.missionTitle}
@@ -293,7 +299,7 @@ export default function HomePage() {
         {/* Background decorative elements */}
         <div className="absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-[#00955e]/5 to-transparent rounded-full transform -translate-x-32 -translate-y-32"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-[#00955e]/3 to-transparent rounded-full transform translate-x-48 translate-y-48"></div>
-        
+
         <div className="container mx-auto px-4 relative">
           <div className="text-center mb-16">
             <div className="inline-block">
@@ -324,11 +330,11 @@ export default function HomePage() {
         {/* Background Effects */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#00955e]/5 via-transparent to-[#007a4e]/5 opacity-50"></div>
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#00955e] to-transparent"></div>
-        
+
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-[#00955e]/10 to-transparent rounded-full transform translate-x-32 -translate-y-32 group-hover:scale-110 transition-transform duration-1000"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-[#00955e]/5 to-transparent rounded-full transform -translate-x-48 translate-y-48 group-hover:scale-110 transition-transform duration-1000"></div>
-        
+
         <div className="container mx-auto px-4 relative">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             {/* Enhanced Logo Section */}
@@ -348,7 +354,7 @@ export default function HomePage() {
               <p className="text-gray-300 leading-relaxed mb-6 group-hover/footer-logo:text-gray-200 transition-colors duration-300">
                 {t.footerText}
               </p>
-              
+
               {/* Enhanced Social Links */}
               <div className="flex space-x-4">
                 {[
@@ -385,7 +391,7 @@ export default function HomePage() {
                   t.electricalManufacturing
                 ].map((service, index) => (
                   <li key={index} className="group/service-item">
-                    <a 
+                    <a
                       href="#services"
                       className="text-gray-300 hover:text-[#00955e] transition-all duration-300 cursor-pointer relative flex items-center group-hover/service-item:translate-x-2"
                     >

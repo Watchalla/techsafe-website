@@ -1,16 +1,9 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
 import { ExternalLink, MessageCircle, ArrowRight, Sparkles } from "lucide-react"
 import type { LucideIcon } from "lucide-react"
 import type { Locale } from "@/lib/i18n"
@@ -24,6 +17,7 @@ interface ServiceCardProps {
   seeDetailsText: string
   contractServiceText: string
   whatsappMessage: string
+  serviceId: string // Nova prop para identificar o serviço
 }
 
 export function ServiceCard({
@@ -35,13 +29,19 @@ export function ServiceCard({
   seeDetailsText,
   contractServiceText,
   whatsappMessage,
+  serviceId,
 }: ServiceCardProps) {
   const [isHovered, setIsHovered] = useState(false)
+  const router = useRouter()
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent(`${whatsappMessage} ${title}`)
     const whatsappUrl = `https://wa.me/244951588735?text=${message}`
     window.open(whatsappUrl, "_blank")
+  }
+
+  const handleDetailsClick = () => {
+    router.push(`/services/${serviceId}`)
   }
 
   return (
@@ -91,34 +91,16 @@ export function ServiceCard({
           </CardDescription>
 
           <div className="flex flex-col gap-4">
-            {/* Details Button */}
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button 
-                  variant="outline" 
-                  className="w-full border-2 border-gray-200 hover:border-[#00955e] hover:text-[#00955e] hover:bg-[#00955e]/5 transition-all duration-300 rounded-xl py-3 group/btn"
-                >
-                  <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
-                  {seeDetailsText}
-                  <ArrowRight className="h-4 w-4 ml-auto opacity-0 group-hover/btn:opacity-100 group-hover/btn:translate-x-1 transition-all duration-300" />
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-2xl rounded-2xl border-2 border-[#00955e]/20">
-                <DialogHeader>
-                  <DialogTitle className="flex items-center gap-3 text-2xl mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#00955e] to-[#007a4e] rounded-xl flex items-center justify-center shadow-lg">
-                      <Icon className="h-6 w-6 text-white" />
-                    </div>
-                    <span className="bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                      {title}
-                    </span>
-                  </DialogTitle>
-                  <DialogDescription className="text-base leading-relaxed pt-4 text-gray-600">
-                    {details}
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog>
+            {/* Details Button - Agora navega para a página */}
+            <Button 
+              onClick={handleDetailsClick}
+              variant="outline" 
+              className="w-full border-2 border-gray-200 hover:border-[#00955e] hover:text-[#00955e] hover:bg-[#00955e]/5 transition-all duration-300 rounded-xl py-3 group/btn"
+            >
+              <ExternalLink className="h-4 w-4 mr-2 group-hover/btn:rotate-12 transition-transform duration-300" />
+              {seeDetailsText}
+              <ArrowRight className="h-4 w-4 ml-auto opacity-0 group-hover/btn:opacity-100 group-hover/btn:translate-x-1 transition-all duration-300" />
+            </Button>
 
             {/* WhatsApp Button */}
             <Button 
