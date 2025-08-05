@@ -38,7 +38,7 @@ const servicesData = {
     icon: Zap,
     color: "from-blue-500 to-blue-600",
     features: ["installation", "maintenance", "certification", "emergency"],
-    gallery: ["/services/electrical-1.jpg", "/services/electrical-2.jpg", "/services/electrical-3.jpg"],
+    gallery: ["/services/IMG_0995.jpg", "/services/IMG_8156.jpg", "/services/IMG_9476.jpg"],
     benefits: ["safety", "compliance", "efficiency", "reliability"],
     process: ["assessment", "design", "installation", "testing"]
   },
@@ -46,7 +46,7 @@ const servicesData = {
     icon: Shield,
     color: "from-red-500 to-red-600",
     features: ["detection", "suppression", "training", "inspection"],
-    gallery: ["/services/fire-1.jpg", "/services/fire-2.jpg", "/services/fire-3.jpg"],
+    gallery: ["/services/IMG_0995.jpg", "/services/IMG_8156.jpg", "/services/IMG_9476.jpg"],
     benefits: ["protection", "compliance", "training", "reliability"],
     process: ["survey", "installation", "training", "maintenance"]
   },
@@ -54,7 +54,7 @@ const servicesData = {
     icon: Cog,
     color: "from-purple-500 to-purple-600",
     features: ["plc", "scada", "iot", "remote"],
-    gallery: ["/services/automation-1.jpg", "/services/automation-2.jpg", "/services/automation-3.jpg"],
+    gallery: ["/services/IMG_0995.jpg", "/services/IMG_8156.jpg", "/services/IMG_9476.jpg"],
     benefits: ["automation", "efficiency", "monitoring", "scalability"],
     process: ["consulting", "programming", "integration", "support"]
   },
@@ -62,7 +62,7 @@ const servicesData = {
     icon: Fuel,
     color: "from-orange-500 to-orange-600",
     features: ["safety", "monitoring", "compliance", "optimization"],
-    gallery: ["/services/oilgas-1.jpg", "/services/oilgas-2.jpg", "/services/oilgas-3.jpg"],
+   gallery: ["/services/IMG_0995.jpg", "/services/IMG_8156.jpg", "/services/IMG_9476.jpg"],
     benefits: ["safety", "reliability", "compliance", "efficiency"],
     process: ["assessment", "design", "implementation", "monitoring"]
   },
@@ -70,7 +70,7 @@ const servicesData = {
     icon: Settings,
     color: "from-green-500 to-green-600",
     features: ["panels", "enclosures", "custom", "quality"],
-    gallery: ["/services/manufacturing-1.jpg", "/services/manufacturing-2.jpg", "/services/manufacturing-3.jpg"],
+    gallery: ["/services/IMG_0995.jpg", "/services/IMG_8156.jpg", "/services/IMG_9476.jpg"],
     benefits: ["durability", "customization", "quality", "compliance"],
     process: ["design", "manufacturing", "testing", "delivery"]
   }
